@@ -328,6 +328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9047177738770261176, guid: bbe62f7f44a07f74983ecf2be0a68ab6, type: 3}
+  spawnRateMin: 0.5
+  spawnRateMax: 3
 --- !u!1 &133806228
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9047177738770261176, guid: bbe62f7f44a07f74983ecf2be0a68ab6, type: 3}
+  spawnRateMin: 0.5
+  spawnRateMax: 3
 --- !u!1 &145550794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9047177738770261176, guid: bbe62f7f44a07f74983ecf2be0a68ab6, type: 3}
+  spawnRateMin: 0.5
+  spawnRateMax: 3
 --- !u!1 &1863571079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,6 +1866,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9047177738770261176, guid: bbe62f7f44a07f74983ecf2be0a68ab6, type: 3}
+  spawnRateMin: 0.5
+  spawnRateMax: 3
 --- !u!1 &2086367592
 GameObject:
   m_ObjectHideFlags: 0
