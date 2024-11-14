@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
+    private int currentAmmo = 30;
+    private int maxAmmo = 30;
+
     private float moveSpeed = 5.0f;
     private float dashSpeed = 10f;
     private float jumpForce = 3.0f;
@@ -18,6 +23,9 @@ public class Player : MonoBehaviour
     private Transform bulletSpawnPoint;
     [SerializeField]
     private GameObject bulletObj;
+
+    [SerializeField]
+    private TextMeshProUGUI textAmmo;
 
     void Awake()
     {
@@ -57,9 +65,11 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && currentAmmo != 0)
         {
             Instantiate(bulletObj, bulletSpawnPoint.transform.position, cameraTransform.transform.rotation);
+            currentAmmo--;
+            textAmmo.text = $"{currentAmmo} / {maxAmmo}";
         }
     }
     
