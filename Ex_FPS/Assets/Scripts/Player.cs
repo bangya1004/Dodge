@@ -6,9 +6,10 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    private int currentAmmo = 30;
     private int maxAmmo = 30;
-
+    private int currentAmmo = 30;
+    private int remainAmmo = 180;
+    
     private float moveSpeed = 5.0f;
     private float dashSpeed = 10f;
     private float jumpForce = 3.0f;
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
         Move();
         Jump();
         Shoot();
+        Reload();
     }
 
     void Move()
@@ -69,7 +71,17 @@ public class Player : MonoBehaviour
         {
             Instantiate(bulletObj, bulletSpawnPoint.transform.position, cameraTransform.transform.rotation);
             currentAmmo--;
-            textAmmo.text = $"{currentAmmo} / {maxAmmo}";
+            textAmmo.text = $"{currentAmmo}/{remainAmmo}";
+        }
+    }
+
+    void Reload()
+    {
+        if (Input.GetKey("r") && currentAmmo != maxAmmo)
+        {
+            currentAmmo = maxAmmo;
+            remainAmmo -= 30;
+            textAmmo.text = $"{currentAmmo}/{remainAmmo}";
         }
     }
     
