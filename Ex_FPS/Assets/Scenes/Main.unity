@@ -1092,6 +1092,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 309813508}
   bulletObj: {fileID: 5869409706862798753, guid: 8553ae210eebe724baf469129510c6a3, type: 3}
   textAmmo: {fileID: 1356399174}
+  textHp: {fileID: 100077919}
 --- !u!54 &1343827422
 Rigidbody:
   m_ObjectHideFlags: 0
