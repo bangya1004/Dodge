@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     private int maxAmmo = 30;
     private int currentAmmo = 30;
     private int remainAmmo = 180;
-    
+    private int hp = 100;
+
     private float moveSpeed = 5.0f;
     private float dashSpeed = 10f;
     private float jumpForce = 3.0f;
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
     private bool isJump = false;
 
     private Rigidbody rigid;
-    
+
     [SerializeField]
     private Transform cameraTransform;
     [SerializeField]
@@ -27,6 +28,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI textAmmo;
+    [SerializeField]
+    private TextMeshProUGUI textHp;
 
     void Awake()
     {
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour
         Jump();
         Shoot();
         Reload();
+        GameOver();
     }
 
     void Move()
@@ -84,9 +88,20 @@ public class Player : MonoBehaviour
             textAmmo.text = $"{currentAmmo}/{remainAmmo}";
         }
     }
-    
+
+    void GameOver()
+    {
+        //if (hp == 0) gameObject.SetActive(false);
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Ground") isJump = false;
+        if (other.gameObject.tag == "Enemy")
+        {
+            hp -= 5;
+            if (hp <= 0) textHp.text = $"HP 0";
+            else textHp.text = $"HP {hp}";
+        }
     }
 }
