@@ -11,20 +11,17 @@ public class EnemySpawn : MonoBehaviour
 
     void Awake()
     {
-        StartCoroutine("SpawnEnemy");
+        StartCoroutine(SpawnEnemy());
     }
 
     void Update()
     {
-
+        
     }
 
     IEnumerator SpawnEnemy()
     {
-        while (true)
-        {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-        }
+        Instantiate(enemyPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
 
         yield return new WaitForSeconds(3.0f);
     }
