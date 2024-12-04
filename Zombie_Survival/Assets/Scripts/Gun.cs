@@ -51,6 +51,7 @@ public class Gun : MonoBehaviour {
         // 총 상태 초기화
         magAmmo = magCapacity;
         state = State.Ready;
+        lastFireTime = 0;
     }
 
     // 발사 시도
