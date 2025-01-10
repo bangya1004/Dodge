@@ -24,15 +24,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        
-        if (Input.GetMouseButtonDown(0) && playerSpriteRenderer.flipX)
+        float x = Input.GetAxis("Horizontal");
+        if (x > 0 && playerSpriteRenderer.flipX)
         {           
             playerSpriteRenderer.flipX = false;
         }
-        else if (Input.GetMouseButtonDown(0) && !playerSpriteRenderer.flipX)
+        else if (x < 0 && !playerSpriteRenderer.flipX)
         {
             
             playerSpriteRenderer.flipX = true;
-        }   
+        }
+
+        transform.position += new Vector3(x, 0, 0) * moveSpeed * Time.deltaTime;
     }
 }
