@@ -8,11 +8,13 @@ public class PlayerMovement : MonoBehaviour
 
     private BoxCollider2D playerCollider;
     private Rigidbody2D playerRigid;
+    private SpriteRenderer playerSpriteRenderer;
 
     private void Awake()
     {
         playerCollider = GetComponent<BoxCollider2D>();
         playerRigid = GetComponent<Rigidbody2D>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -22,6 +24,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-
+        
+        if (Input.GetMouseButtonDown(0) && playerSpriteRenderer.flipX)
+        {           
+            playerSpriteRenderer.flipX = false;
+        }
+        else if (Input.GetMouseButtonDown(0) && !playerSpriteRenderer.flipX)
+        {
+            
+            playerSpriteRenderer.flipX = true;
+        }   
     }
 }
