@@ -11,4 +11,8 @@ public class ButtonManager : MonoBehaviour
     {
         panel_StageSelect.SetActive(true);
     }
+    public void OffPanel_Middle()
+    {
+        panel_StageSelect.SetActive(false);
+    }
 }
