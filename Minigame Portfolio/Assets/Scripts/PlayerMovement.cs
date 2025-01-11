@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
     private float moveSpeed = 1.0f;
 
     private BoxCollider2D playerCollider;
