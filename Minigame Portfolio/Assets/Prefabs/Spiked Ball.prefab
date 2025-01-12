@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3288884009478328216}
   - component: {fileID: 3288884009478328219}
   - component: {fileID: 3288884009478328218}
+  - component: {fileID: 8055643291568740005}
   m_Layer: 0
   m_Name: Spiked Ball
   m_TagString: Untagged
@@ -131,3 +132,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &8055643291568740005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3288884009478328223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938b6f7e2609f594c9afd83272a14ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D playerCollider;
     private Rigidbody2D playerRigid;
     private SpriteRenderer playerSpriteRenderer;
+    private Animator playerAnimator;
 
     private void Awake()
     {
         playerCollider = GetComponent<BoxCollider2D>();
         playerRigid = GetComponent<Rigidbody2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -25,17 +28,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float x = Input.GetAxis("Horizontal");
-        if (x > 0 && playerSpriteRenderer.flipX)
-        {           
-            playerSpriteRenderer.flipX = false;
-        }
-        else if (x < 0 && !playerSpriteRenderer.flipX)
+        if (SceneManager.GetActiveScene().name == "Stage_Avoid")
         {
-            
-            playerSpriteRenderer.flipX = true;
-        }
+            playerAnimator.SetBool("isRun", true);
 
-        transform.position += new Vector3(x, 0, 0) * moveSpeed * Time.deltaTime;
+            float x = Input.GetAxis("Horizontal");
+            if (x > 0 && playerSpriteRenderer.flipX)
+            {
+                playerSpriteRenderer.flipX = false;
+            }
+            else if (x < 0 && !playerSpriteRenderer.flipX)
+            {
+
+                playerSpriteRenderer.flipX = true;
+            }
+            transform.position += new Vector3(x, 0, 0) * moveSpeed * Time.deltaTime;
+        }
     }
 }
