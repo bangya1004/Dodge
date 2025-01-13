@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed = 1.0f;
     [SerializeField]
     private GameObject[] lifeImg;
+
+    [SerializeField]
+    private GameObject panel_GameOver;
 
     private BoxCollider2D playerCollider;
     private Rigidbody2D playerRigid;
@@ -61,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Destroy(gameObject);
                 lifeCount = 0;
+                panel_GameOver.SetActive(true);
                 // 게임 오버 처리
             }
         }

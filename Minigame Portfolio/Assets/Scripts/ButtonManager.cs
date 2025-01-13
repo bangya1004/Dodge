@@ -50,4 +50,8 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Lobby");
     }
+    public void ToAvoidStage()
+    {
+        SceneManager.LoadScene("Stage_Avoid");
+    }
 }
