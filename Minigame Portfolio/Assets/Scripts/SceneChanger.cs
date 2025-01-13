@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {  
-    void Update()
+    private void Update()
     {
         TitleToLobby();
     }
 
-    void TitleToLobby()
+    private void TitleToLobby()
     {
         if (SceneManager.GetActiveScene().name == "Title" && Input.GetMouseButtonDown(0))
         {

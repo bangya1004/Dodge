@@ -57,10 +57,12 @@ public class PlayerMovement : MonoBehaviour
         {
             lifeImg[lifeCount].SetActive(false);
             lifeCount++;
-            //if (lifeCount >= 3)
-            //{
-            //    // 게임 오버 처리
-            //}
+            if (lifeCount >= 3)
+            {
+                Destroy(gameObject);
+                lifeCount = 0;
+                // 게임 오버 처리
+            }
         }
     }
 }

@@ -46,5 +46,8 @@ public class ButtonManager : MonoBehaviour
             SceneManager.LoadScene("Stage_04");
         }
     }
-
+    public void AvoidStageToLobby()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
 }
