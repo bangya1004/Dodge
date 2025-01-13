@@ -363,6 +363,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  lifeImg:
+  - {fileID: 662710660}
+  - {fileID: 859826562}
+  - {fileID: 102447839}
 --- !u!1 &286171799
 GameObject:
   m_ObjectHideFlags: 0

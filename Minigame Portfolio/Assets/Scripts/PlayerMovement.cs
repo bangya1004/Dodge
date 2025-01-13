@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 1.0f;
+    [SerializeField]
+    private GameObject[] lifeImg;
 
     private BoxCollider2D playerCollider;
     private Rigidbody2D playerRigid;
     private SpriteRenderer playerSpriteRenderer;
     private Animator playerAnimator;
+
+    private int lifeCount = 0;
 
     private void Awake()
     {
@@ -43,6 +48,19 @@ public class PlayerMovement : MonoBehaviour
                 playerSpriteRenderer.flipX = true;
             }
             transform.position += new Vector3(x, 0, 0) * moveSpeed * Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Spike")
+        {
+            lifeImg[lifeCount].SetActive(false);
+            lifeCount++;
+            //if (lifeCount >= 3)
+            //{
+            //    // 게임 오버 처리
+            //}
         }
     }
 }
