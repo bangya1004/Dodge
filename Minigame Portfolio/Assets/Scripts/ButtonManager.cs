@@ -49,9 +49,11 @@ public class ButtonManager : MonoBehaviour
     public void AvoidStageToLobby()
     {
         SceneManager.LoadScene("Lobby");
+        Time.timeScale = 1;
     }
     public void ToAvoidStage()
     {
         SceneManager.LoadScene("Stage_Avoid");
+        Time.timeScale = 1;
     }
 }
