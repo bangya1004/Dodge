@@ -56,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
             }
             transform.position += new Vector3(x, 0, 0) * moveSpeed * Time.deltaTime;
         }
+        if (SceneManager.GetActiveScene().name == "Stage_02")
+        {
+            playerAnimator.SetBool("isRun", true);
+        }
     }
 
     public void Die()
