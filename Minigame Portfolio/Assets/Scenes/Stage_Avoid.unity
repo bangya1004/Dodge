@@ -1137,6 +1137,9 @@ MonoBehaviour:
   - {fileID: 102447839}
   panel_GameOver: {fileID: 1838015108}
   player: {fileID: 278762788}
+  bestTimerText: {fileID: 1742121679}
+  nowTimerText: {fileID: 532080319}
+  timer: {fileID: 1452426224}
 --- !u!4 &861836586
 Transform:
   m_ObjectHideFlags: 0

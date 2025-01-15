@@ -6,8 +6,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerText;
 
     private float time;
 
@@ -19,14 +18,14 @@ public class Timer : MonoBehaviour
         StartCoroutine(StartTimer());
     }
 
-    IEnumerator StartTimer()
+    public IEnumerator StartTimer()
     {
         while (true)
         {
             time += Time.deltaTime;
             minute = (int)time / 60;
             second = (int)time % 60;
-            timerText.text = minute.ToString("00") + ":" + second.ToString("00");
+            timerText.text = minute.ToString("00") + ":" + second.ToString("00");      
             yield return null;
         }
     }

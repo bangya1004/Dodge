@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +15,13 @@ public class GameManager : MonoBehaviour
     private GameObject panel_GameOver;
     [SerializeField]
     private PlayerMovement player;
+    [SerializeField]
+    private TextMeshProUGUI bestTimerText;
+    [SerializeField]
+    private TextMeshProUGUI nowTimerText;
+
+    [SerializeField]
+    private Timer timer;
 
 
     void Start()
@@ -34,6 +44,9 @@ public class GameManager : MonoBehaviour
             lifeCount = 0;
             panel_GameOver.SetActive(true);
             Time.timeScale = 0;
+            nowTimerText.text = timer.timerText.text;
+            timer.StopCoroutine("StartTimer");
+            
             // 게임 오버 처리
         }
     }
