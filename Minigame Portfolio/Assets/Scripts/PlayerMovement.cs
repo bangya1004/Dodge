@@ -10,17 +10,19 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 1.0f;
+    //[SerializeField]
+    //private GameObject[] lifeImg;
+    //[SerializeField]
+    //private GameObject panel_GameOver;
     [SerializeField]
-    private GameObject[] lifeImg;
-    [SerializeField]
-    private GameObject panel_GameOver;
+    private GameManager gameManager;
 
     private BoxCollider2D playerCollider;
     private Rigidbody2D playerRigid;
     private SpriteRenderer playerSpriteRenderer;
     private Animator playerAnimator;
 
-    private int lifeCount = 0;
+    //private int lifeCount = 0;
 
     private void Awake()
     {
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         Move();
-        Die();
+        //Die();
     }
 
     private void Move()
@@ -58,21 +60,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die()
     {
-        if (lifeCount >= 3)
-        {
+        //if (lifeCount >= 3)
+        //{
             Destroy(gameObject);
-            lifeCount = 0;
-            panel_GameOver.SetActive(true);
-            Time.timeScale = 0;
+            //lifeCount = 0;
+            //panel_GameOver.SetActive(true);
+            //Time.timeScale = 0;
             // 게임 오버 처리
-        }
+        //}
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Spike")
         {
-            lifeImg[lifeCount].SetActive(false);
-            lifeCount++;
+            gameManager.playerCollider();
         }
     }
 }
