@@ -46,14 +46,14 @@ public class ButtonManager : MonoBehaviour
             SceneManager.LoadScene("Stage_04");
         }
     }
-    public void AvoidStageToLobby()
+    public void StageToLobby()
     {
         SceneManager.LoadScene("Lobby");
         Time.timeScale = 1;
     }
-    public void ToAvoidStage()
+    public void ReStartStage()
     {
-        SceneManager.LoadScene("Stage_Avoid");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
     }
 }
