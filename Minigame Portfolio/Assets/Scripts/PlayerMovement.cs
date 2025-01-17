@@ -38,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (SceneManager.GetActiveScene().name == "Stage_Avoid")
+        if (SceneManager.GetActiveScene().name == "Stage_Avoid" ||
+            SceneManager.GetActiveScene().name == "Stage_03")
         {
             playerAnimator.SetBool("isRun", true);
 
