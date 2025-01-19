@@ -88,6 +88,11 @@ public class PlayerMovement : MonoBehaviour
         {
             gameManager.playerCollider();
         }
+        if (other.gameObject.tag == "Spine")
+        {
+            Time.timeScale = 0;
+            gameManager.Stage_02_PlayerDie();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

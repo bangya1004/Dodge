@@ -4,6 +4,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,7 +32,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        playerDie();
+        if (SceneManager.GetActiveScene().name == "Stage_Avoid")
+        {
+            playerDie();
+        }
         //playerCollider();
     }
 
@@ -55,5 +59,10 @@ public class GameManager : MonoBehaviour
     {
         lifeImg[lifeCount].SetActive(false);
         lifeCount++;
+    }
+
+    public void Stage_02_PlayerDie()
+    {
+        panel_GameOver.SetActive(true);
     }
 }
