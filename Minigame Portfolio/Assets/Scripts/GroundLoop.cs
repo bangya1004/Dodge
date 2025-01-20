@@ -27,7 +27,7 @@ public class GroundLoop : MonoBehaviour
 
     private void RePosition()
     {
-        Vector2 offset = new Vector2(width * 2f, 0);
+        Vector2 offset = new Vector2(width * 3f, 0);
         transform.position = (Vector2)transform.position + offset;
     }
 }

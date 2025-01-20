@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         Jump();
+        Fall();
     }
 
     private void Move()
@@ -82,16 +83,20 @@ public class PlayerMovement : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void Fall()
+    {
+        if (transform.position.y < -5)
+        {
+            Time.timeScale = 0;
+            gameManager.Stage_02_PlayerDie();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Spike")
         {
             gameManager.playerCollider();
-        }
-        if (other.gameObject.tag == "Spine")
-        {
-            Time.timeScale = 0;
-            gameManager.Stage_02_PlayerDie();
         }
     }
 
@@ -102,6 +107,11 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
             jumpCount = 0;
+        }
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            Time.timeScale = 0;
+            gameManager.Stage_02_PlayerDie();
         }
     }
 
