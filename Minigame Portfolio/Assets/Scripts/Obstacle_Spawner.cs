@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class Obstacle_Spawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject spikePrefab;
+    [SerializeField]
+    private GameObject[] spines;
 
     [SerializeField]
     private float spawnRate = 0;
@@ -21,14 +24,21 @@ public class Obstacle_Spawner : MonoBehaviour
     [SerializeField]
     private float spawnMaxXPos = 0;
 
-    private void Awake()
+    private void OnEnable()
     {
-        StartCoroutine(spwanSpike());
+        for (int i = 0; i < spines.Length; i++)
+        {
+            if (Random.Range(0, 3) == 0) spines[i].SetActive(true);
+            else spines[i].SetActive(false);
+        }
     }
 
-    private void Update()
+    private void Awake()
     {
-
+        if (SceneManager.GetActiveScene().name == "Stage_Avoid")
+        {
+            StartCoroutine(spwanSpike());
+        }
     }
 
     IEnumerator spwanSpike()

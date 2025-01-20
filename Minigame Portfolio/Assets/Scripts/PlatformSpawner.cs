@@ -6,10 +6,6 @@ public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] platformObj;
-    [SerializeField]
-    private GameObject[] Spines;
-    [SerializeField]
-    private GameObject[] Saws;
 
     private float time;
     private float meter;
