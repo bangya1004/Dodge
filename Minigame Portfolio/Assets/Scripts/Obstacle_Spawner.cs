@@ -9,8 +9,6 @@ public class Obstacle_Spawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject spikePrefab;
-    [SerializeField]
-    private GameObject[] spines;
 
     [SerializeField]
     private float spawnRate = 0;
@@ -23,15 +21,6 @@ public class Obstacle_Spawner : MonoBehaviour
     private float spawnMinXPos = 0;
     [SerializeField]
     private float spawnMaxXPos = 0;
-
-    private void OnEnable()
-    {
-        for (int i = 0; i < spines.Length; i++)
-        {
-            if (Random.Range(0, 3) == 0) spines[i].SetActive(true);
-            else spines[i].SetActive(false);
-        }
-    }
 
     private void Awake()
     {

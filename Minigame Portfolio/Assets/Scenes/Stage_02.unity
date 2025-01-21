@@ -533,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2517b4aabe930448da1f387458e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spines: []
 --- !u!1 &102828071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2517b4aabe930448da1f387458e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spines: []
 --- !u!61 &453371953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1794,7 +1796,6 @@ GameObject:
   - component: {fileID: 837025303}
   - component: {fileID: 837025302}
   - component: {fileID: 837025301}
-  - component: {fileID: 837025305}
   m_Layer: 0
   m_Name: Tilemap_Ground (1)
   m_TagString: Ground
@@ -1831,6 +1832,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2517b4aabe930448da1f387458e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spines:
+  - {fileID: 631559215}
+  - {fileID: 1279322012}
+  - {fileID: 335832041}
 --- !u!61 &837025302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2129,28 +2134,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &837025305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837025299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f15420bae3fe74b93b6d8ec5e849ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spikePrefab: {fileID: 0}
-  spines:
-  - {fileID: 631559215}
-  - {fileID: 1279322012}
-  - {fileID: 335832041}
-  spawnRate: 0
-  minRate: 0
-  maxRate: 0
-  spawnMinXPos: 0
-  spawnMaxXPos: 0
 --- !u!1001 &1015067563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3887,6 +3870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2517b4aabe930448da1f387458e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spines: []
 --- !u!61 &1936621191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4238,6 +4222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2517b4aabe930448da1f387458e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spines: []
 --- !u!61 &1976941630
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4566,6 +4551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2517b4aabe930448da1f387458e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spines: []
 --- !u!61 &2060100465
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class PlatformSpawner : MonoBehaviour
         time += Time.deltaTime;
         meter = (int)(time % 60);
 
-        if (10 <= meter && meter < 60)
+        if (30 <= meter && meter < 60)
         {
             platformObj[0].SetActive(false);
             platformObj[1].SetActive(true);

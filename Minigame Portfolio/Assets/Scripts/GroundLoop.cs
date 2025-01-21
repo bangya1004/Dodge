@@ -7,6 +7,9 @@ public class GroundLoop : MonoBehaviour
     private float width = 0f;
     private float speed = 5f;
 
+    [SerializeField]
+    private GameObject[] spines;
+
     private BoxCollider2D groundCollider;
 
     private void Awake()
@@ -29,5 +32,10 @@ public class GroundLoop : MonoBehaviour
     {
         Vector2 offset = new Vector2(width * 3f, 0);
         transform.position = (Vector2)transform.position + offset;
+        for (int i = 0; i < spines.Length; i++)
+        {
+            if (Random.Range(0, 3) == 0) spines[i].SetActive(true);
+            else spines[i].SetActive(false);
+        }
     }
 }
