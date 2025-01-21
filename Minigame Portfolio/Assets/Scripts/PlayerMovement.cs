@@ -86,9 +86,10 @@ public class PlayerMovement : MonoBehaviour
     private void Fall()
     {
         if (transform.position.y < -7)
-        {
-            Time.timeScale = 0;
+        {        
             gameManager.Stage_02_PlayerDie();
+            Destroy(gameObject);
+            Time.timeScale = 0;
         }
     }
 
