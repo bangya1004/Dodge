@@ -10,8 +10,8 @@ public class Timer : MonoBehaviour
 
     private float time;
 
-    private int minute;
-    private int second;
+    public int minute;
+    public int second;
 
     private void Awake()
     {

@@ -27,9 +27,18 @@ public class GameManager : MonoBehaviour
     private MeterScore meter;
 
 
-    void Start()
+    void Awake()
     {
-        
+        if (PlayerPrefs.HasKey("Minute"))
+        {
+            int pastMinute = PlayerPrefs.GetInt("Minute");
+            int pastSecond = PlayerPrefs.GetInt("Second");
+            bestTimerText.text = $"{pastMinute} : {pastSecond}";
+        }
+        else
+        {
+            bestTimerText.text = "0 : 00";
+        }
     }
 
     void Update()
@@ -43,6 +52,8 @@ public class GameManager : MonoBehaviour
 
     public void playerDie()
     {
+        int minute = timer.minute;
+        int second = timer.second;
         if (lifeCount >= 3)
         {
             //Destroy(gameObject);
@@ -51,6 +62,17 @@ public class GameManager : MonoBehaviour
             panel_GameOver.SetActive(true);
             Time.timeScale = 0;
             nowTimerText.text = timer.timerText.text;
+            if (minute > PlayerPrefs.GetInt("Minute"))
+            {
+                PlayerPrefs.SetInt("Minute", minute);
+                PlayerPrefs.SetInt("Second", second);
+            }
+            if (minute == PlayerPrefs.GetInt("Minute") &&
+                second > PlayerPrefs.GetInt("Second"))
+            {
+                PlayerPrefs.SetInt("Second", second);
+            }
+            bestTimerText.text = $"{PlayerPrefs.GetInt("Minute")} : {PlayerPrefs.GetInt("Second")}";
             timer.StopCoroutine("StartTimer");
             
             // 게임 오버 처리
