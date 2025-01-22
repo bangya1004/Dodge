@@ -29,16 +29,20 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (PlayerPrefs.HasKey("Minute"))
+        if (SceneManager.GetActiveScene().name == "Stage_Avoid")
         {
-            int pastMinute = PlayerPrefs.GetInt("Minute");
-            int pastSecond = PlayerPrefs.GetInt("Second");
-            bestTimerText.text = $"{pastMinute} : {pastSecond}";
+            if (PlayerPrefs.HasKey("Minute"))
+            {
+                int pastMinute = PlayerPrefs.GetInt("Minute");
+                int pastSecond = PlayerPrefs.GetInt("Second");
+                bestTimerText.text = $"{pastMinute} : {pastSecond}";
+            }
+            else
+            {
+                bestTimerText.text = "0 : 00";
+            }
         }
-        else
-        {
-            bestTimerText.text = "0 : 00";
-        }
+
     }
 
     void Update()
