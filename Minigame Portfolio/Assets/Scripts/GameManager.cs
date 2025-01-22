@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Timer timer;
+    [SerializeField]
+    private MeterScore meter;
 
 
     void Start()
@@ -64,5 +66,6 @@ public class GameManager : MonoBehaviour
     public void Stage_02_PlayerDie()
     {
         panel_GameOver.SetActive(true);
+        nowTimerText.text = $"{meter.meter}m";
     }
 }

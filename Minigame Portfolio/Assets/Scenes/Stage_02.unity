@@ -2853,8 +2853,9 @@ MonoBehaviour:
   panel_GameOver: {fileID: 1594926061}
   player: {fileID: 484621300}
   bestTimerText: {fileID: 0}
-  nowTimerText: {fileID: 0}
+  nowTimerText: {fileID: 1777277586}
   timer: {fileID: 0}
+  meter: {fileID: 2130397763}
 --- !u!4 &1719240322
 Transform:
   m_ObjectHideFlags: 0
@@ -5017,3 +5018,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950fa9908a417cb45937e1d6b367411b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meter: 0

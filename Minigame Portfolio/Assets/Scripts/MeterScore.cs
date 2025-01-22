@@ -9,7 +9,7 @@ public class MeterScore : MonoBehaviour
     private TextMeshProUGUI scoreText;
 
     private float time;
-    private int meter;
+    public int meter;
 
     private void Awake()
     {
