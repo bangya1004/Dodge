@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     private float moveSpeed = 3.0f;
 
-    private Vector2 inputVec;
+    public Vector2 inputVec;
     private Rigidbody2D playerRigid;
     private SpriteRenderer playerSprite;
     private Animator playerAnim;
