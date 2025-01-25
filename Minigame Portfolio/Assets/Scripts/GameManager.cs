@@ -42,6 +42,19 @@ public class GameManager : MonoBehaviour
                 bestTimerText.text = "0 : 00";
             }
         }
+        if (SceneManager.GetActiveScene().name == "Stage_02")
+        {
+            if (PlayerPrefs.HasKey("Meter"))
+            {
+                int pastMeter = PlayerPrefs.GetInt("Meter");
+                bestTimerText.text = $"{pastMeter}m";
+            }
+            else
+            {
+                bestTimerText.text = "0m";
+            }
+        }
+
 
     }
 
@@ -91,7 +104,15 @@ public class GameManager : MonoBehaviour
 
     public void Stage_02_PlayerDie()
     {
+        int nowMeter = meter.meter;
         panel_GameOver.SetActive(true);
-        nowTimerText.text = $"{meter.meter}m";
+        nowTimerText.text = $"Now\n{nowMeter}m";
+        
+        if (nowMeter > PlayerPrefs.GetInt("Meter"))
+        {
+            PlayerPrefs.SetInt("Meter", nowMeter);
+        }
+        int bestMeter = PlayerPrefs.GetInt("Meter");
+        bestTimerText.text = $"Best\n{bestMeter}m";
     }
 }
