@@ -921,6 +921,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82651399}
   m_CullTransparentMesh: 1
+--- !u!1 &278949152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7065513592656966926, guid: e79e70147183dd449a9284cdbf319701, type: 3}
+  m_PrefabInstance: {fileID: 787623114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &278949159
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278949152}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.1}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!1 &339748771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1321,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1762,6 +1783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7065513592656966960, guid: e79e70147183dd449a9284cdbf319701, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7065513592656966962, guid: e79e70147183dd449a9284cdbf319701, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1810,7 +1835,8 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7065513592656966960, guid: e79e70147183dd449a9284cdbf319701, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e79e70147183dd449a9284cdbf319701, type: 3}
 --- !u!1 &973441040
 GameObject:
