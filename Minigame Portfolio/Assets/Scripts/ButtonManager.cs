@@ -9,7 +9,12 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     private GameObject panel_StageSelect;
     [SerializeField]
+    private GameObject panel_Setting;
+    [SerializeField]
     private Button[] SelectGameButtons;
+    [SerializeField]
+    private Button[] interactable_Buttons;
+
 
     public void OnPanel_Middle()
     {
@@ -55,5 +60,22 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
+    }
+
+    public void OnSetting()
+    {
+        panel_Setting.SetActive(true);
+        for (int i = 0; i < interactable_Buttons.Length; i++)
+        {
+            interactable_Buttons[i].interactable = false;
+        }
+    }
+    public void OffSetting()
+    {
+        panel_Setting.SetActive(false);
+        for (int i = 0; i < interactable_Buttons.Length; i++)
+        {
+            interactable_Buttons[i].interactable = true;
+        }
     }
 }
