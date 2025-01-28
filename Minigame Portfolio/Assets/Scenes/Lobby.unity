@@ -4096,7 +4096,11 @@ MonoBehaviour:
   - {fileID: 1404379621}
   - {fileID: 1505076685}
   - {fileID: 893911742}
-  interactable_Buttons: []
+  interactable_Buttons:
+  - {fileID: 202072826}
+  - {fileID: 1082593880}
+  - {fileID: 1493355392}
+  - {fileID: 47523602}
 --- !u!4 &1854648837
 Transform:
   m_ObjectHideFlags: 0
